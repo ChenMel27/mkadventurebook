@@ -1,5 +1,7 @@
+// App.js
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import BibleVerseOfTheDay from "./BibleVerseOfTheDay";
 
 // Placeholder About component
 const About = () => (
@@ -55,10 +57,10 @@ function LandingPage() {
   );
 }
 
-// Placeholder Bucket List component
+// Placeholder Travel Map component
 const TravelMap = () => (
   <div
-    id="bucket-list"
+    id="travel-map"
     style={{
       padding: "20px",
       background: "#fff",
@@ -66,43 +68,49 @@ const TravelMap = () => (
       fontFamily: "Playfair Display, serif",
     }}
   >
-    <h2 style={{ textAlign: "center" }}>Bucket List</h2>
+    <h2 style={{ textAlign: "center" }}>Travel Map</h2>
     <p style={{ textAlign: "center" }}>
-      This is the Bucket List page. Content coming soon.
+      This is the Travel Map page. Content coming soon.
     </p>
   </div>
 );
 
 function App() {
   return (
-    <Router>
-      <div className="video-container">
-        {/* Navigation Bar */}
-        <nav className="navbar">
-          <h2 className="logo">K&M</h2>
-          <div className="nav-container">
-            <ul className="nav-links">
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/bucket-list">Bucket List</Link>
-              </li>
-              <li>
-                <Link to="/travel-map">Travel Map</Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
+    <Router basename={process.env.PUBLIC_URL}>
+      <>
+        <div className="video-container">
+          {/* Navigation Bar */}
+          <nav className="navbar">
+            <h2 className="logo">K&M</h2>
+            <div className="nav-container">
+              <ul className="nav-links">
+                <li>
+                  <Link to="/about">About</Link>
+                </li>
+                <li>
+                  <Link to="/bucket-list">Bucket List</Link>
+                </li>
+                <li>
+                  <Link to="/travel-map">Travel Map</Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
 
-        {/* Define Routes */}
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/bucket-list" element={<BucketList />} />
-          <Route path="/travel-map" element={<TravelMap />} />
-        </Routes>
-      </div>
+          {/* Define Routes */}
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/bucket-list" element={<BucketList />} />
+            <Route path="/travel-map" element={<TravelMap />} />
+          </Routes>
+        </div>
+        {/* Bible Verse Section */}
+        <section className="bible-section">
+          <BibleVerseOfTheDay />
+        </section>
+      </>
     </Router>
   );
 }
