@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/mkadventurebook/static/css/main.a5c386b5.css",
-    "main.js": "/mkadventurebook/static/js/main.622695c5.js",
+    "main.css": "/mkadventurebook/static/css/main.f672bae7.css",
+    "main.js": "/mkadventurebook/static/js/main.904fabfc.js",
     "static/js/453.5e814862.chunk.js": "/mkadventurebook/static/js/453.5e814862.chunk.js",
     "index.html": "/mkadventurebook/index.html",
-    "main.a5c386b5.css.map": "/mkadventurebook/static/css/main.a5c386b5.css.map",
-    "main.622695c5.js.map": "/mkadventurebook/static/js/main.622695c5.js.map",
+    "main.f672bae7.css.map": "/mkadventurebook/static/css/main.f672bae7.css.map",
+    "main.904fabfc.js.map": "/mkadventurebook/static/js/main.904fabfc.js.map",
     "453.5e814862.chunk.js.map": "/mkadventurebook/static/js/453.5e814862.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5c386b5.css",
-    "static/js/main.622695c5.js"
+    "static/css/main.f672bae7.css",
+    "static/js/main.904fabfc.js"
   ]
 }
