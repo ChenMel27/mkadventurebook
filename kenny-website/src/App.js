@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="video-container">
+      {/* Background Video */}
+      <video autoPlay loop muted playsInline className="background-video">
+        <source src={`${process.env.PUBLIC_URL}/kennybg.mp4`} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Navigation Links in Top Right */}
+      <nav className="nav-links">
+        <a href="#map">Map</a>
+        <a href="#todo">To-Do List</a>
+        <a href="#about">About</a>
+      </nav>
+
+      {/* Title Page */}
+      <div className="overlay">
+        <h1 className="title">Our Adventure Book</h1>
+      </div>
     </div>
   );
 }
