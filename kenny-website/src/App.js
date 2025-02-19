@@ -2,6 +2,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import BibleVerseOfTheDay from "./BibleVerseOfTheDay";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import FBXModel from "./components/FBXModel";
 
 // Placeholder About component
 const About = () => (
@@ -110,6 +113,21 @@ function App() {
         <section className="bible-section">
           <BibleVerseOfTheDay />
         </section>
+
+      {/* 3D Scene Section */}
+      <section className="three-d-scene">
+        <h2>Explore the Ascent</h2>
+        <Canvas camera={{ position: [2, 2, 1], fov: 50 }}>
+          <ambientLight intensity={0.7} />
+          <directionalLight position={[5, 5, 5]} intensity={1} />
+          <FBXModel 
+            url={`${process.env.PUBLIC_URL || "/mkadventurebook"}/models/mountain.fbx`} 
+            textureUrl={`${process.env.PUBLIC_URL || "/mkadventurebook"}/textures/mountain_texture.png`} 
+            position={[2, 0, 0]}
+          />
+          <OrbitControls minDistance={0.5} maxDistance={2} />
+        </Canvas>
+      </section>
       </>
     </Router>
   );

@@ -1,18 +1,32 @@
+/* General Styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Playfair Display", serif;
+  color: white;
+  background-color: #0d0d0d;
+  overflow-x: hidden;
+}
+
+/* Video Background */
 .video-container {
-  margin-top: -8px;
-  left: 0;
-  margin-left: -8px;
+  position: relative;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(70%);
 }
 
-/* Overlay for Title */
+/* Overlay for readability */
 .overlay {
   position: absolute;
   top: 0;
@@ -24,12 +38,12 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: rgba(0, 0, 0, 0.3); /* Light overlay for readability */
+  background: rgba(0, 0, 0, 0.4); /* Soft dark overlay */
 }
 
+/* Hero Title */
 .title {
-  font-size: 60px; /* Larger title for impact */
-  font-family: "Playfair Display", serif;
+  font-size: 65px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -37,7 +51,7 @@
   background: linear-gradient(90deg, #ffcc00, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
 }
 
 /* Navigation Bar */
@@ -48,35 +62,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Remove horizontal padding so we can control margins separately */
-  padding: 20px 0; 
+  padding: 15px 50px;
   background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(6px);
-  z-index: 20;
+  backdrop-filter: blur(10px);
+  z-index: 100;
 }
 
 .logo {
-  font-family: "Playfair Display", serif;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  /* Apply a subtle gradient to match the overlay title */
+  letter-spacing: 3px;
   background: linear-gradient(90deg, #ffcc00, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* Add a left margin to position the logo away from the edge */
-  margin-left: 40px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
-  margin: 0; /* Remove default list margin */
-  padding: 0; /* Remove default list padding */
-  /* Add a right margin to keep the nav links off the very edge */
-  margin-right: 40px;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li {
@@ -84,13 +91,12 @@
 }
 
 .nav-links a {
-  font-family: "Playfair Display", serif;
-  font-size: 16px;
+  font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #fff;
+  color: white;
   text-decoration: none;
-  padding: 8px 15px;
+  padding: 10px 15px;
   transition: all 0.3s ease;
 }
 
@@ -99,20 +105,65 @@
   border-bottom: 2px solid #ffcc00;
 }
 
-/* Bible Verse of the Day container styling */
-.bible-verse-container {
-  margin-top: 2000px;
-  margin: 20px auto;
-  padding: 20px;
-  font-family: "Playfair Display", serif;
-  text-align: center;
-}
-
-/* Bible Section styling */
+/* Sections */
 .bible-section {
-  background: #ffffff;
+  background: linear-gradient(to bottom, #ffffff, #f8f8f8);
   padding: 50px 20px;
   text-align: center;
-  margin-left: -8px;
   width: 98%;
+  border-radius: 10px;
+  margin: 40px auto;
+  color: #333;
+}
+
+/* 3D Model Section */
+.three-d-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  padding: 30px;
+  background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+  margin: 50px auto;
+  width: 90%;
+}
+
+.three-d-scene h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #ffcc00;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Canvas for Three.js */
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 40px;
+  }
+  
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .three-d-scene {
+    width: 95%;
+    height: 500px;
+    padding: 20px;
+  }
 }
